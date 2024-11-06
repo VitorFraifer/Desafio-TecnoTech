@@ -31,3 +31,7 @@ CREATE TABLE "TecnoTech".anuidades
 
 ALTER TABLE IF EXISTS "TecnoTech".anuidades
     OWNER to postgres;
+
+
+ALTER TABLE "TecnoTech".associados ADD id serial NOT NULL;
+ALTER TABLE "TecnoTech".associados ADD CONSTRAINT associados_pk PRIMARY KEY (id);
