@@ -1,3 +1,7 @@
+<?php
+    require "conexao_bd.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,18 +22,22 @@
                 <li class="associado">
                     <h2>Fernando Henrique Cardoso</h2>
                     <img src="/static/img/edit-icon.svg">
+                    <img src="/static/img/search-icon.svg">
                 </li>
                 <li class="associado">
                     <h2>Fernando Henrique Cardoso</h2>
                     <img src="/static/img/edit-icon.svg">
+                    <img src="/static/img/search-icon.svg">
                 </li>
                 <li class="associado">
                     <h2>Fernando Henrique Cardoso</h2>
                     <img src="/static/img/edit-icon.svg">
+                    <img src="/static/img/search-icon.svg">
                 </li>
                 <li class="associado">
                     <h2>Fernando Henrique Cardoso</h2>
                     <img src="/static/img/edit-icon.svg">
+                    <img src="/static/img/search-icon.svg">
                 </li>
             </ul>
         </section>
