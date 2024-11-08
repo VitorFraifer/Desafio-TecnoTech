@@ -118,6 +118,10 @@ td img{
     width: 20px;
 }
 
+table img{
+    cursor: pointer;
+}
+
 .modal-cadastro-associados{
     width: 100vw;
     height: 100vh;
