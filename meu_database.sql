@@ -32,6 +32,10 @@ CREATE TABLE "TecnoTech".anuidades
 ALTER TABLE IF EXISTS "TecnoTech".anuidades
     OWNER to postgres;
 
-
+-- Coluna ID para tabela Associados
 ALTER TABLE "TecnoTech".associados ADD id serial NOT NULL;
 ALTER TABLE "TecnoTech".associados ADD CONSTRAINT associados_pk PRIMARY KEY (id);
+
+-- Coluna ID para tabela Anuidades
+ALTER TABLE "TecnoTech".anuidades ADD id serial NOT NULL;
+ALTER TABLE "TecnoTech".anuidades ADD CONSTRAINT associados_pk PRIMARY KEY (id);

@@ -200,3 +200,8 @@ form button{
     align-items: center;
     justify-content: center;
 }
+
+.form-delete{
+    width: 10px;
+    height: 10px;
+}

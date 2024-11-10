@@ -43,6 +43,33 @@
                 echo "Erro ao enviar feedback: " . $e->getMessage();
             }
         }
+
+        // Exclusão de associado
+        elseif ($formulario === 'delete-associado') {
+            $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
+            
+            try {
+                $sql = 'DELETE FROM "TecnoTech".associados WHERE id = :id';
+                $stmt = $pdo->prepare($sql);
+                $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+                $stmt->execute();
+                echo "Associado excluído com sucesso!";
+            } catch (PDOException $e) {
+                echo "Erro ao excluir associado: " . $e->getMessage();
+            }
+        } elseif ($formulario === 'delete-anuidade') {
+            $id = filter_input(INPUT_POST, 'id', FILTER_SANITIZE_NUMBER_INT);
+            
+            try {
+                $sql = 'DELETE FROM "TecnoTech".anuidades WHERE id = :id';
+                $stmt = $pdo->prepare($sql);
+                $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+                $stmt->execute();
+                echo "Anuidade excluída com sucesso!";
+            } catch (PDOException $e) {
+                echo "Erro ao excluir anuidade: " . $e->getMessage();
+            }
+        }
     }
 
     // Armazenando todos os associados em um array para exibi-los no HTML
@@ -83,7 +110,7 @@
                         <h2><?php echo htmlspecialchars($associado['nome']); ?></h2>
                         <img src="/static/img/edit-icon.svg">
                         <img src="/static/img/search-icon.svg">
-                        <img src="/static/img/delete-icon.svg">
+                        <img src="/static/img/delete-icon.svg" onclick="deleteAssociado(<?php echo $associado['id']; ?>)">
                     </li> 
                 <?php endforeach; ?>
             </ul>
@@ -105,7 +132,7 @@
                     <?php foreach ($anuidadesArray as $anuidade): ?>
                         <tr>
                             <td><?php echo htmlspecialchars($anuidade['ano']); ?></td>
-                            <td><?php echo htmlspecialchars($anuidade['valor']); ?> <img src="/static/img/edit-icon.svg"> <img src="/static/img/delete-icon.svg"></td>
+                            <td><?php echo "R$" . htmlspecialchars($anuidade['valor']); ?> <img src="/static/img/edit-icon.svg"> <img src="/static/img/delete-icon.svg" onclick="deleteAnuidade(<?php echo $anuidade['id']; ?>)"></td>
                         </tr>
                     <?php endforeach; ?>
                     </tbody>
