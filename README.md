@@ -15,11 +15,13 @@ No projeto foi criada uma interface onde nela são exibidos todos os associados 
 É necessário garantir que o arquivo php.ini está com as extensões do PostrgreSQL habilitadas. Para isso é necessário descomentar (remover o ponto e virgula que antecede a linha) as seguintes linhas do arquivo php.ini:
 
   ;extension=pdo_pgsql
+  
   ;extension=pgsql
 
   devem ficar:
 
   extension=pdo_pgsql
+  
   extension=pgsql
 
  Além disso, é necessário ter o postgreSQL instalado para rodar o banco de dados.
